@@ -1,0 +1,66 @@
+.title {
+    font-size: 30px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: 500;
+}
+
+#suggested{
+    padding: 0;
+    margin: 0;
+    display: none;
+}
+
+#suggested div {
+    display: none;
+}
+
+#suggested div:nth-last-child(-n + 5) {
+    display: block;
+}
+
+.suggested-word{
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.suggested-word:hover{
+    background-color: #c7e4ff57;
+    transform: scale(1, 1.15);
+}
+
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    transition: opacity 0.7s, visibility 0.75s;
+}
+
+.loader-hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader::after {
+    content: "";
+    width: 75px;
+    height: 75px;
+    border: 15px solid #dddddd;
+    border-top-color: #000;
+    border-radius: 50%;
+    animation: loading 0.75a ease infinite;
+}
+
+@keyframes loading {
+    from {
+        transition: rotate(0turn);
+    }
+    to {
+        transform: rotate(1turn);
+    }
+}
